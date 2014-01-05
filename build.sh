@@ -3,11 +3,11 @@
 # General Settings
 currentdir=$(pwd) 		# Get Current Working Dir 
 now=$(date +'%Y%m%d') # Get Date
-version43=$(echo "4.3")
-version44=$(echo "4.4")
-getapex='curl -s -o ApexLauncher.apk apex.anddoes.com/Download.aspx'
-getromstats='curl -s -o RomStats.apk build.codenamelungo.net/RomStats.apk'
-getmedia='curl -s -o media.zip build.codenamelungo.net/media.zip)'
+version43=$(echo "4.3") # Android 4.3
+version44=$(echo "4.4") # Android 4.4
+getapex='curl -s -o ApexLauncher.apk apex.anddoes.com/Download.aspx' # Download Latest ApexLauncher
+getromstats='curl -s -o RomStats.apk build.codenamelungo.net/RomStats.apk' # Download Latest RomStats
+getmedia='curl -s -o media.zip build.codenamelungo.net/media.zip' # Download Latest Media
 
 # Build android 4.3
 function build_android43 (){
@@ -90,7 +90,7 @@ function build_android44 (){
 	echo "Build Information"
 	echo "-----------------------------"
 	echo "Device:	$DEVICE"
-	echo "Android: $version43"
+	echo "Android: $version44"
 	echo "Build Date:$now"
 	echo "-----------------------------"
 	echo ""
@@ -167,8 +167,8 @@ show_header (){
 show_menu() {
 	echo "Select Android Version"
 	echo "----------------------"
-	echo "1. Android 4.3"
-	echo "2. Android 4.4"
+	echo "1. Android 4.4"
+	echo "2. Android 4.3"
 	echo "3. Exit"
 }
 
@@ -176,8 +176,8 @@ function read_input(){
 	local c
 	read -p "Enter build target [ 1 - 3 ] " c
 	case $c in
-		1)	build_android43 ;;
-		2)	build_android44 ;;
+		1)	build_android44 ;;
+		2)	build_android43 ;;
 		3)	echo "Good Bye!"; exit 0 ;;
 		*)	
 			echo "Please select between 1 to 3 choice only."
@@ -188,8 +188,7 @@ function read_input(){
 # main logic
 while true
 do
-	clear
-	show_header
+	show_header # display header
  	show_menu	# display memu
  	read_input  # wait for user input
 done
