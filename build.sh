@@ -76,7 +76,9 @@ function build_android43 (){
 	echo ""
 	cd $currentdir
 	7z a CodenameLungo-$DEVICE$version43-$now.zip
+	#md5sum CodenameLungo-$DEVICE$version43-$now.zip > CodenameLungo-$DEVICE$version43-$now.md5
 	mv CodenameLungo-$DEVICE$version43-$now.zip ~/Downloads
+	#mv CodenameLungo-$DEVICE$version43-$now.md5 ~/Downloads
 	echo "Build is done!"
 }
 
@@ -149,7 +151,9 @@ function build_android44 (){
 	echo ""
 	cd $currentdir
 	7z a CodenameLungo-$DEVICE$version44-$now.zip
+	#md5sum CodenameLungo-$DEVICE$version44-$now.zip > CodenameLungo-$DEVICE$version44-$now.md5
 	mv CodenameLungo-$DEVICE$version44-$now.zip ~/Downloads
+	#mv CodenameLungo-$DEVICE$version43-$now.md5 ~/Downloads
 	echo "Build is done!"
 }
 
