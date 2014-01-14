@@ -103,9 +103,9 @@ function build_android44 (){
 	sleep 2
 	cd $currentdir/system/app
 	echo "Cleaning Apps..."
-	rm -f Apollo.apk ApplicationsProvider.apk BackupRestoreConfirmation.apk BasicDreams.apk Browser.apk Calculator.apk CMAccount.apk CMFileManager.apk CMUpdater.apk CMWallpapers.apk DocumentsUI.apk DownloadProviderUi.apk DSPManager.apk Email.apk	Email2.apk Exchange2.apk FmRadio.apk Galaxy4.apk HoloSpiralWallpaper.apk HTMLViewer.apk InputDevices.apk LiveWallpapers.apk LiveWallpapersPicker.apk MagicSmokeWallpapers.apk MonthCalendarWidget.apk NoiseField.apk OmniTorch.apk OpenWnn.apk PacProcessor.apk PhaseBeam.apk PhotoTable.apk PicoTts.apk QuickSearchBox.apk SharedStorageBackup.apk Shell.apk SoundRecorder.apk Stk.apk Term.apk Torch.apk Trebuchet.apk VideoEditor.apk VisualizationWallpapers.apk VoiceDialer.apk VoicePlus.apk webaudiores.apk
+	rm -f Apollo.apk ApplicationsProvider.apk BasicDreams.apk Browser.apk Calculator.apk CMAccount.apk CMFileManager.apk CMUpdater.apk CMWallpapers.apk DocumentsUI.apk DownloadProviderUi.apk DSPManager.apk Email.apk	Email2.apk Exchange2.apk FmRadio.apk Galaxy4.apk HoloSpiralWallpaper.apk HTMLViewer.apk InputDevices.apk LiveWallpapers.apk LiveWallpapersPicker.apk MagicSmokeWallpapers.apk MonthCalendarWidget.apk NoiseField.apk OmniTorch.apk OpenWnn.apk PacProcessor.apk PhaseBeam.apk PhotoTable.apk PicoTts.apk QuickSearchBox.apk SharedStorageBackup.apk Shell.apk SoundRecorder.apk Stk.apk Term.apk Torch.apk Trebuchet.apk VideoEditor.apk VisualizationWallpapers.apk VoiceDialer.apk VoicePlus.apk webaudiores.apk
 	cd $currentdir/system/priv-app
-	rm -f BackupRestoreConfirmation.apk InputDevices.apk Launcher3.apk OpenDelta.apk SharedStorageBackup.apk Shell.apk VoiceDialer.apk 
+	rm -f InputDevices.apk Launcher3.apk OpenDelta.apk VoiceDialer.apk 
 	echo "App Cleaning DONE!"
 	sleep 2
 	echo ""
