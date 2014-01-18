@@ -132,8 +132,8 @@ function build_android44 (){
 	echo "Downloading Latest RomStats..."
 	cd $currentdir/system/priv-app/
 	$getromstats
-	echo "Adding ApexLauncher..."
-	echo "ROM Stats Added!"
+	echo "Adding RomStats..."
+	echo "ROMStats Added!"
 	sleep 2
 	echo ""
 	echo "Downloading Latest Codename Lungo Media..."
