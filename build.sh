@@ -161,7 +161,7 @@ show_header (){
 	echo ""
 	echo "Codename Lungo Build Script "
 	echo "---------------------------------------------------------"
-	echo "Version     	: 20140105-2"
+	echo "Version     	: 20140131"
 	echo "Maintainer  	: T.Veluwenkamp <contact@timveluwenkamp.eu>"
 	echo "Copyright   	: Copyright (C) 2014 T.Veluwenkamp"
 	echo "---------------------------------------------------------"
@@ -182,7 +182,7 @@ function read_input(){
 	case $c in
 		1)	build_android44 ;;
 		2)	build_android43 ;;
-		3)	echo "Good Bye!"; exit 0 ;;
+		3)	cd ~/Downloads; echo "Good Bye!"; exit 0; ;;
 		*)	
 			echo "Please select between 1 to 3 choice only."
 			pause
