@@ -71,12 +71,12 @@ function build_android43 (){
 	sleep 2
 	echo ""
 	echo "Opening build.prop for Cleaning..."
-	subl $currentdir/system/build.prop
+	mate $currentdir/system/build.prop
 	read -p "Build.prop is open press [enter] when you are done"
 	echo ""
 	cd $currentdir
 	7z a CodenameLungo-$DEVICE$version43-$now.zip
-	#md5sum CodenameLungo-$DEVICE$version43-$now.zip > CodenameLungo-$DEVICE$version43-$now.md5
+	#md5sum CodenameLungo-$DEVICE$version43-$now.zip > 	CodenameLungo-$DEVICE$version43-$now.md5
 	mv CodenameLungo-$DEVICE$version43-$now.zip ~/Downloads
 	#mv CodenameLungo-$DEVICE$version43-$now.md5 ~/Downloads
 	echo "Build is done!"
@@ -146,12 +146,12 @@ function build_android44 (){
 	sleep 2
 	echo ""
 	echo "Opening build.prop for Cleaning..."
-	subl $currentdir/system/build.prop
+	mate $currentdir/system/build.prop
 	read -p "Build.prop is open press [enter] when you are done"
 	echo ""
 	cd $currentdir
 	7z a CodenameLungo-$DEVICE$version44-$now.zip
-	#md5sum CodenameLungo-$DEVICE$version44-$now.zip > CodenameLungo-$DEVICE$version44-$now.md5
+	#md5sum CodenameLungo-$DEVICE$version44-$now.zip > 	 		CodenameLungo-$DEVICE$version44-$now.md5
 	mv CodenameLungo-$DEVICE$version44-$now.zip ~/Downloads
 	#mv CodenameLungo-$DEVICE$version43-$now.md5 ~/Downloads
 	echo "Build is done!"
