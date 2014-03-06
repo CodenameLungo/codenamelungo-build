@@ -49,17 +49,23 @@ function build_android43 (){
 	echo ""
 	echo "Downloading Latest ApexLauncher..."
 	$getapex
-	mv ApexLauncher.apk $currentdir/system/app/
 	echo "Adding ApexLauncher..."
+  mv ApexLauncher.apk $currentdir/system/app/
 	echo "ApexLauncher Added!"
 	sleep 2
 	echo ""
 	echo "Downloading Latest ROM Stats..."
-	cd $currentdir/system/app/
 	$getromstats
 	echo "Adding RomStats..."
+  mv Romstats.apk $currentdir/system/app/
 	echo "RomStats Added!"
 	sleep 2
+  echo ""
+  echo "Setting chmod rights"
+  cd $currentdir/system/app
+  chmod +x ApexLauncher.apk
+  chmod +x RomStats.apk
+  sleep 2
 	echo ""
 	echo "Downloading Latest Codename Lungo Media..."
 	cd $currentdir/system/media/audio
@@ -76,9 +82,7 @@ function build_android43 (){
 	echo ""
 	cd $currentdir
 	7z a CodenameLungo-$DEVICE$version43-$now.zip
-	#md5sum CodenameLungo-$DEVICE$version43-$now.zip > 	CodenameLungo-$DEVICE$version43-$now.md5
 	mv CodenameLungo-$DEVICE$version43-$now.zip ~/Downloads
-	#mv CodenameLungo-$DEVICE$version43-$now.md5 ~/Downloads
 	echo "Build is done!"
 }
 
@@ -124,17 +128,25 @@ function build_android44 (){
 	echo ""
 	echo "Downloading Latest ApexLauncher..."
 	$getapex
-	mv ApexLauncher.apk $currentdir/system/app/
+	mv ApexLauncher.apk $currentdir/system/priv-app/
 	echo "Adding ApexLauncher..."
 	echo "ApexLauncher Added!"
 	sleep 2
 	echo ""
 	echo "Downloading Latest RomStats..."
-	cd $currentdir/system/priv-app/
+	cd $currentdir/system/app/
 	$getromstats
 	echo "Adding RomStats..."
 	echo "ROMStats Added!"
 	sleep 2
+  echo ""
+  echo "Setting chmod rights"
+  cd $currentdir/system/priv-app
+  chmod +x ApexLauncher.apk
+  cd $currentdir/system/app 
+  chmod +x RomStats.apk
+  echo "Setting chmod rights Done!"
+  sleep 2
 	echo ""
 	echo "Downloading Latest Codename Lungo Media..."
 	cd $currentdir/system/media/audio
@@ -151,9 +163,7 @@ function build_android44 (){
 	echo ""
 	cd $currentdir
 	7z a CodenameLungo-$DEVICE$version44-$now.zip
-	#md5sum CodenameLungo-$DEVICE$version44-$now.zip > 	 		CodenameLungo-$DEVICE$version44-$now.md5
 	mv CodenameLungo-$DEVICE$version44-$now.zip ~/Downloads
-	#mv CodenameLungo-$DEVICE$version43-$now.md5 ~/Downloads
 	echo "Build is done!"
 }
 
@@ -161,7 +171,7 @@ show_header (){
 	echo ""
 	echo "Codename Lungo Build Script "
 	echo "---------------------------------------------------------"
-	echo "Version     	: 20140131"
+	echo "Version     	: 20140306"
 	echo "Maintainer  	: T.Veluwenkamp <contact@timveluwenkamp.eu>"
 	echo "Copyright   	: Copyright (C) 2014 T.Veluwenkamp"
 	echo "---------------------------------------------------------"
