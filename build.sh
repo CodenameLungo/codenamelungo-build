@@ -192,7 +192,7 @@ function read_input(){
 	case $c in
 		1)	build_android44 ;;
 		2)	build_android43 ;;
-		3)	cd ~/Downloads; echo "Good Bye!"; exit 0; ;;
+		3)	echo "Good Bye!"; exit 0; ;;
 		*)	
 			echo "Please select between 1 to 3 choice only."
 			pause
