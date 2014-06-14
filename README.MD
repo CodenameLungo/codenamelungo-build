@@ -1,3 +1,8 @@
+# The Codename Lungo Build Script
+This script automatically strips, optimizes, added things that Codename Lungo ROMS are know for..
+
+## Installation Instructions  
+
 #### 1. Install the prerequisites ####
 ~~~
 sudo apt-get install curl git-core 
@@ -23,7 +28,7 @@ chmod +x ~/bin/cnl-build/build.sh
 #### 3. make build command ####
 edit .bash_aliases
 ~~~
-sudo nano ~/~/.bash_aliases
+sudo nano ~/.bash_aliases
 ~~~
 
 add the following alias
@@ -36,4 +41,3 @@ alias cnlbuild='/home/[user]/bin/cnl-build/./build.sh'
 2. unzip the nightly with the archive manager in seperate folder 
 3. open your Terminal and go to the extracted nightly
 4. type cnlbuild and follow the steps.
-
