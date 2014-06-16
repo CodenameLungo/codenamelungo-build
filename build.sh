@@ -20,7 +20,7 @@ function build_android43 (){
 	echo "-----------------------------"
 	echo "Device:	$DEVICE"
 	echo "Android: $version43"
-	echo "Build Date:$now"
+	echo "Build Date: $now"
 	echo "-----------------------------"
 	echo ""
 	read -p "Everything ok? press [enter] to continue"
@@ -81,6 +81,7 @@ function build_android43 (){
 	read -p "Build.prop is open press [enter] when you are done"
 	echo ""
 	cd $currentdir
+	find . -name '*.DS_Store' -type f -delete
 	7z a CodenameLungo-$DEVICE$version43-$now.zip
 	mv CodenameLungo-$DEVICE$version43-$now.zip ~/Downloads
 	echo "Build is done!"
@@ -97,7 +98,7 @@ function build_android44 (){
 	echo "-----------------------------"
 	echo "Device:	$DEVICE"
 	echo "Android: $version44"
-	echo "Build Date:$now"
+	echo "Build Date: $now"
 	echo "-----------------------------"
 	echo ""
 	read -p "Everything ok? press [enter] to continue"
@@ -162,6 +163,7 @@ function build_android44 (){
 	read -p "Build.prop is open press [enter] when you are done"
 	echo ""
 	cd $currentdir
+	find . -name '*.DS_Store' -type f -delete
 	7z a CodenameLungo-$DEVICE$version44-$now.zip
 	mv CodenameLungo-$DEVICE$version44-$now.zip ~/Downloads
 	echo "Build is done!"
@@ -171,7 +173,7 @@ show_header (){
 	echo ""
 	echo "Codename Lungo Build Script "
 	echo "---------------------------------------------------------"
-	echo "Version     	: 20140309"
+	echo "Version     	: 20140616"
 	echo "Maintainer  	: T.Veluwenkamp <contact@timveluwenkamp.eu>"
 	echo "Copyright   	: Copyright (C) 2014 T.Veluwenkamp"
 	echo "---------------------------------------------------------"
