@@ -3,8 +3,8 @@
 # General Settings
 currentdir=$(pwd) 		# Get Current Working Dir 
 now=$(date +'%Y%m%d') # Get Date
-cmversion=$(echo "cm-11") # CM11
-paversion=$(echo "pa-4.4") # CM11 
+cmversion=$(echo "cm11") # CM11
+paversion=$(echo "pa4.4") # PA 
 getapex='curl -s -o ApexLauncher.apk apex.anddoes.com/Download.aspx' # Download Latest ApexLauncher
 getromstats='curl -s -o RomStats.apk build.codenamelungo.net/RomStats.apk' # Download Latest RomStats
 getmedia='curl -s -o media.zip build.codenamelungo.net/media.zip' # Download Latest Media

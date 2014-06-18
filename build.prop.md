@@ -3,8 +3,8 @@ before the Additional Build line.
 ~~~
 # ROM Statistics
 ro.romstats.url=http://stats.codenamelungo.net/
-ro.romstats.name=Codename Lungo Nexus 7
-ro.romstats.version=4.4-20140612
+ro.romstats.name=Codename Lungo Nexus 4
+ro.romstats.version=PA-20140618
 ro.romstats.tframe=7
 
 # Power Saving
@@ -26,6 +26,6 @@ wifi.supplicant_scan_interval=15
 
 #### 3. Change the following lines ####
 ~~~
-ro.cm.version=
+ro.cm.display.version=
 ro.modversion=
 ~~~
