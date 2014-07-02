@@ -4,7 +4,7 @@ before the Additional Build line.
 # ROM Statistics
 ro.romstats.url=http://stats.codenamelungo.net/
 ro.romstats.name=Codename Lungo Nexus 4
-ro.romstats.version=CM-20140620
+ro.romstats.version=CM-20140702
 ro.romstats.tframe=7
 
 # Power Saving
