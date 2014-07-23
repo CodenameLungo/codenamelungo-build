@@ -34,7 +34,7 @@ function build_CM11 (){
 	sleep 2
 	cd $currentdir/system/app
 	echo "Cleaning Apps..."
-	rm -f Apollo.apk BasicDreams.apk Browser.apk Calculator.apk CMFileManager.apk CMHome.apk CMWallpapers.apk DocumentsUI.apk DownloadProviderUi.apk DSPManager.apk Email.apk Exchange2.apk Galaxy4.apk HoloSpiralWallpaper.apk HTMLViewer.apk LiveWallpapers.apk LiveWallpapersPicker.apk LockClock.apk MagicSmokeWallpapers.apk NoiseField.apk PacProcessor.apk PhaseBeam.apk PhotoTable.apk SoundRecorder.apk Stk.apk Term.apk Torch.apk VideoEditor.apk VisualizationWallpapers.apk
+	rm -f Apollo.apk BasicDreams.apk Browser.apk Calculator.apk CMFileManager.apk CMHome.apk CMWallpapers.apk DocumentsUI.apk DownloadProviderUi.apk DSPManager.apk Email.apk Exchange2.apk Galaxy4.apk HoloSpiralWallpaper.apk HTMLViewer.apk LiveWallpapers.apk LiveWallpapersPicker.apk LockClock.apk MagicSmokeWallpapers.apk NoiseField.apk PacProcessor.apk PhaseBeam.apk PhotoPhase.apk PhotoTable.apk SoundRecorder.apk Stk.apk Term.apk Torch.apk VideoEditor.apk VisualizationWallpapers.apk
 	cd $currentdir/system/priv-app
 	rm -f BackupRestoreConfirmation.apk CMAccount.apk CMUpdater.apk InputDevices.apk PicoTts.apk Trebuchet.apk VoiceDialer.apk
 	echo "App Cleaning DONE!"
@@ -187,7 +187,7 @@ show_header (){
 	echo ""
 	echo "Codename Lungo Build Script "
 	echo "---------------------------------------------------------"
-	echo "Version     	: 20140620"
+	echo "Version     	: 20140723"
 	echo "Maintainer  	: T.Veluwenkamp <contact@timveluwenkamp.eu>"
 	echo "Copyright   	: Copyright (C) 2014 T.Veluwenkamp"
 	echo "---------------------------------------------------------"
