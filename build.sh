@@ -3,8 +3,8 @@
 # General Settings
 currentdir=$(pwd) 		# Get Current Working Dir 
 now=$(date +'%Y%m%d') # Get Date
-cmversion=$(echo "cm11") # CM11
-paversion=$(echo "pa4.4") # PA 
+cmversion=$(echo "CM11") # CM11
+paversion=$(echo "PA4.4") # PA 
 getapex='curl -s -o ApexLauncher.apk apex.anddoes.com/Download.aspx' # Download Latest ApexLauncher
 getromstats='curl -s -o RomStats.apk build.codenamelungo.net/RomStats.apk' # Download Latest RomStats
 getmedia='curl -s -o media.zip build.codenamelungo.net/media.zip' # Download Latest Media
@@ -23,22 +23,23 @@ function build_CM11 (){
 	echo "Build Date: $now"
 	echo "-----------------------------"
 	echo ""
-	read -p "Everything ok? press [enter] to continue"
+	read -p "Check for errors press [enter] when everything is ok..."
 	echo ""
 	echo "Starting Build!"
 	echo ""
-	sleep 2
-	echo "Removing recovery folder"
+	sleep 1
+	echo "Removing Recovery Folder..."
 	rm -rf recovery
+  echo "Recovery Folder Removed!"
 	echo ""
-	sleep 2
+	sleep 1
 	cd $currentdir/system/app
 	echo "Cleaning Apps..."
 	rm -f Apollo.apk BasicDreams.apk Browser.apk Calculator.apk CMFileManager.apk CMHome.apk CMWallpapers.apk DocumentsUI.apk DownloadProviderUi.apk DSPManager.apk Email.apk Exchange2.apk Galaxy4.apk HoloSpiralWallpaper.apk HTMLViewer.apk LiveWallpapers.apk LiveWallpapersPicker.apk LockClock.apk MagicSmokeWallpapers.apk NoiseField.apk PacProcessor.apk PhaseBeam.apk PhotoPhase.apk PhotoTable.apk SoundRecorder.apk Stk.apk Term.apk Torch.apk VideoEditor.apk VisualizationWallpapers.apk
 	cd $currentdir/system/priv-app
 	rm -f BackupRestoreConfirmation.apk CMAccount.apk CMUpdater.apk InputDevices.apk PicoTts.apk Trebuchet.apk VoiceDialer.apk
 	echo "App Cleaning DONE!"
-	sleep 2
+	sleep 1
 	echo ""
 	echo "Cleaning Libs..."
 	cd $currentdir/system/lib
@@ -51,29 +52,28 @@ function build_CM11 (){
 	rm -rf $currentdir/system/media/audio/*
 	rm -f $currentdir/system/media/bootanimation.zip
 	echo "Media Cleaning DONE!"
-	sleep 2
+	sleep 1
 	echo ""
 	echo "Downloading Latest ApexLauncher..."
 	$getapex
-	mv ApexLauncher.apk $currentdir/system/priv-app/
+	mv ApexLauncher.apk $currentdir/system/app/
 	echo "Adding ApexLauncher..."
 	echo "ApexLauncher Added!"
-	sleep 2
+	sleep 1
 	echo ""
-	echo "Downloading Latest RomStats..."
+	echo "Downloading Latest ROMStats..."
 	cd $currentdir/system/app/
 	$getromstats
-	echo "Adding RomStats..."
+	echo "Adding ROMStats..."
 	echo "ROMStats Added!"
-	sleep 2
+	sleep 1
   echo ""
   echo "Setting chmod rights"
-  cd $currentdir/system/priv-app
-  chmod +x ApexLauncher.apk
   cd $currentdir/system/app 
+  chmod +x ApexLauncher.apk
   chmod +x RomStats.apk
   echo "Setting chmod rights Done!"
-  sleep 2
+  sleep 1
 	echo ""
 	echo "Downloading Latest Codename Lungo Media..."
 	cd $currentdir/system/media/audio
@@ -82,7 +82,7 @@ function build_CM11 (){
 	unzip -q media.zip
 	rm -f media.zip
 	echo "Codename Lungo Media Added!"
-	sleep 2
+	sleep 1
 	echo ""
 	echo "Opening build.prop for Cleaning..."
 	mate $currentdir/system/build.prop
@@ -93,7 +93,6 @@ function build_CM11 (){
 	find . -name '*.DS_Store' -type f -delete
 	7z a CodenameLungo-$cmversion-$now-$DEVICE.zip
 	mv CodenameLungo-$cmversion-$now-$DEVICE.zip ~/Downloads
-	echo "Build is done!"
 }
 
 # Build Paranoid Android
@@ -110,22 +109,23 @@ function build_pa (){
 	echo "Build Date: $now"
 	echo "-----------------------------"
 	echo ""
-	read -p "Everything ok? press [enter] to continue"
+  read -p "Check for errors press [enter] when everything is ok..."
 	echo ""
 	echo "Starting Build!"
 	echo ""
-	sleep 2
-	echo "Removing recovery folder"
+	sleep 1
+	echo "Removing Recovery Folder..."
 	rm -rf recovery
+  echo "Recovery Folder Removed!"
 	echo ""
-	sleep 2
+	sleep 1
 	cd $currentdir/system/app
 	echo "Cleaning Apps..."
 	rm -f BasicDreams.apk Browser.apk Calculator.apk DocumentsUI.apk DownloadProviderUi.apk Email.apk Exchange2.apk Galaxy4.apk HoloSpiralWallpaper.apk HTMLViewer.apk Launcher3.apk Lightbulb.apk LiveWallpapers.apk LiveWallpapersPicker.apk MagicSmokeWallpapers.apk NoiseField.apk OmniTorch.apk OpenWnn.apk PacProcessor.apk PhaseBeam.apk PhotoTable.apk SoundRecorder.apk Stk.apk VideoEditor.apk VisualizationWallpapers.apk
 	cd $currentdir/system/priv-app
 	rm -f InputDevices.apk MusicFX.apk ParanoidOTA.apk
 	echo "App Cleaning DONE!"
-	sleep 2
+	sleep 1
 	echo ""
 	echo "Cleaning Libs..."
 	cd $currentdir/system/lib
@@ -138,28 +138,28 @@ function build_pa (){
 	rm -rf $currentdir/system/media/audio/*
 	rm -f $currentdir/system/media/bootanimation.zip
 	echo "Media Cleaning DONE!"
-	sleep 2
+	sleep 1
 	echo ""
 	echo "Downloading Latest ApexLauncher..."
 	$getapex
 	mv ApexLauncher.apk $currentdir/system/app/
 	echo "Adding ApexLauncher..."
 	echo "ApexLauncher Added!"
-	sleep 2
+	sleep 1
 	echo ""
 	echo "Downloading Latest RomStats..."
 	cd $currentdir/system/app/
 	$getromstats
 	echo "Adding RomStats..."
 	echo "ROMStats Added!"
-	sleep 2
+	sleep 1
   echo ""
   echo "Setting chmod rights"
   cd $currentdir/system/app 
   chmod +x ApexLauncher.apk
   chmod +x RomStats.apk
   echo "Setting chmod rights Done!"
-  sleep 2
+  sleep 1
 	echo ""
 	echo "Downloading Latest Codename Lungo Media..."
 	cd $currentdir/system/media/audio
@@ -168,7 +168,7 @@ function build_pa (){
 	unzip -q media.zip
 	rm -f media.zip
 	echo "Codename Lungo Media Added!"
-	sleep 2
+	sleep 1
 	echo ""
 	echo "Opening build.prop for Cleaning..."
 	mate $currentdir/system/build.prop
@@ -179,15 +179,13 @@ function build_pa (){
 	find . -name '*.DS_Store' -type f -delete
 	7z a CodenameLungo-$paversion-$now-$DEVICE.zip
 	mv CodenameLungo-$paversion-$now-$DEVICE.zip ~/Downloads
-	echo "Build is done!"
 }
-
 
 show_header (){
 	echo ""
 	echo "Codename Lungo Build Script "
 	echo "---------------------------------------------------------"
-	echo "Version     	: 20140723"
+	echo "Version     	: 20140724"
 	echo "Maintainer  	: T.Veluwenkamp <contact@timveluwenkamp.eu>"
 	echo "Copyright   	: Copyright (C) 2014 T.Veluwenkamp"
 	echo "---------------------------------------------------------"
@@ -206,8 +204,8 @@ function read_input(){
 	local c
 	read -p "Enter build target [ 1 - 3 ] " c
 	case $c in
-		1)	build_CM11 ;;
-		2)	build_pa ;;
+		1)	build_CM11; exit 0; ;;
+		2)	build_pa; exit 0; ;;
 		3)	echo "Good Bye!"; exit 0; ;;
 		*)	
 			echo "Please select between 1 to 3 choice only."
