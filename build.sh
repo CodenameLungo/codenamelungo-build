@@ -1,13 +1,12 @@
 #! /bin/bash
-
 # General Settings
 currentdir=$(pwd) 		# Get Current Working Dir 
 now=$(date +'%Y%m%d') # Get Date
 cmversion=$(echo "CM11") # CM11
 paversion=$(echo "PA4.4") # PA 
-getapex='curl -s -o ApexLauncher.apk apex.anddoes.com/Download.aspx' # Download Latest ApexLauncher
-getromstats='curl -s -o RomStats.apk build.codenamelungo.net/RomStats.apk' # Download Latest RomStats
-getmedia='curl -s -o media.zip build.codenamelungo.net/media.zip' # Download Latest Media
+getapex='curl -s -o /tmp/cnlbuild/ApexLauncher.apk apex.anddoes.com/Download.aspx' # Download Latest ApexLauncher
+getromstats='curl -s -o /tmp/cnlbuild/RomStats.apk build.codenamelungo.net/RomStats.apk' # Download Latest RomStats
+getmedia='curl -s -o /tmp/cnlbuild/media.zip build.codenamelungo.net/media.zip' # Download Latest Media
 
 # Build Cyanogenmod 11
 function build_CM11 (){
@@ -25,6 +24,11 @@ function build_CM11 (){
 	echo ""
 	read -p "Check for errors press [enter] when everything is ok..."
 	echo ""
+  echo "Preparing Build Environment"
+  mkdir -p /tmp/cnlbuild
+  mkdir -p ~/Downloads/cnl-upload
+  echo ""
+  sleep 1
 	echo "Starting Build!"
 	echo ""
 	sleep 1
@@ -54,17 +58,28 @@ function build_CM11 (){
 	echo "Media Cleaning DONE!"
 	sleep 1
 	echo ""
-	echo "Downloading Latest ApexLauncher..."
-	$getapex
-	mv ApexLauncher.apk $currentdir/system/app/
+	echo "Checking If ApexLauncher is Already Downloaded..."
+  if [ -f /tmp/cnlbuild/ApexLauncher.apk ];
+  then
+     echo "ApexLauncher is Already Downloaded"
+  else
+     echo "ApexLauncher Not Present Downloading..."
+     $getapex
+  fi
 	echo "Adding ApexLauncher..."
-	echo "ApexLauncher Added!"
+	cp /tmp/cnlbuild/ApexLauncher.apk $currentdir/system/app/ApexLauncher.apk
+  echo "ApexLauncher Added!"
 	sleep 1
 	echo ""
-	echo "Downloading Latest ROMStats..."
-	cd $currentdir/system/app/
-	$getromstats
+  if [ -f /tmp/cnlbuild/RomStats.apk ];
+  then
+     echo "ROMStats is Already Downloaded"
+  else
+     echo "ROMStats Not Present Downloading..."
+     $getromstats
+  fi
 	echo "Adding ROMStats..."
+  cp /tmp/cnlbuild/RomStats.apk $currentdir/system/app/RomStats.apk
 	echo "ROMStats Added!"
 	sleep 1
   echo ""
@@ -76,10 +91,17 @@ function build_CM11 (){
   sleep 1
 	echo ""
 	echo "Downloading Latest Codename Lungo Media..."
-	cd $currentdir/system/media/audio
-	$getmedia
+  if [ -f /tmp/cnlbuild/media.zip ];
+  then
+     echo "Codename Lungo Media is Already Downloaded"
+  else
+     echo "Codename Lungo Media Not Present Downloading..."
+     $getmedia
+  fi
 	echo "Adding Codename Lungo Media..."
-	unzip -q media.zip
+  cp /tmp/cnlbuild/media.zip $currentdir/system/media/audio/media.zip
+	cd $currentdir/system/media/audio/
+  unzip -q media.zip
 	rm -f media.zip
 	echo "Codename Lungo Media Added!"
 	sleep 1
@@ -92,7 +114,7 @@ function build_CM11 (){
 	find . -name '.DS_Store' -type f -delete
 	find . -name '*.DS_Store' -type f -delete
 	7z a CodenameLungo-$cmversion-$now-$DEVICE.zip
-	mv CodenameLungo-$cmversion-$now-$DEVICE.zip ~/Downloads
+	mv CodenameLungo-$cmversion-$now-$DEVICE.zip ~/Downloads/cnl-upload
 }
 
 # Build Paranoid Android
@@ -109,8 +131,13 @@ function build_pa (){
 	echo "Build Date: $now"
 	echo "-----------------------------"
 	echo ""
-  read -p "Check for errors press [enter] when everything is ok..."
+	read -p "Check for errors press [enter] when everything is ok..."
 	echo ""
+  echo "Preparing Build Environment"
+  mkdir -p /tmp/cnlbuild
+  mkdir -p ~/Downloads/cnl-upload
+  echo ""
+  sleep 1
 	echo "Starting Build!"
 	echo ""
 	sleep 1
@@ -140,17 +167,28 @@ function build_pa (){
 	echo "Media Cleaning DONE!"
 	sleep 1
 	echo ""
-	echo "Downloading Latest ApexLauncher..."
-	$getapex
-	mv ApexLauncher.apk $currentdir/system/app/
+	echo "Checking If ApexLauncher is Already Downloaded..."
+  if [ -f /tmp/cnlbuild/ApexLauncher.apk ];
+  then
+     echo "ApexLauncher is Already Downloaded"
+  else
+     echo "ApexLauncher Not Present Downloading..."
+     $getapex
+  fi
 	echo "Adding ApexLauncher..."
-	echo "ApexLauncher Added!"
+	cp /tmp/cnlbuild/ApexLauncher.apk $currentdir/system/app/ApexLauncher.apk
+  echo "ApexLauncher Added!"
 	sleep 1
 	echo ""
-	echo "Downloading Latest RomStats..."
-	cd $currentdir/system/app/
-	$getromstats
-	echo "Adding RomStats..."
+  if [ -f /tmp/cnlbuild/RomStats.apk ];
+  then
+     echo "ROMStats is Already Downloaded"
+  else
+     echo "ROMStats Not Present Downloading..."
+     $getromstats
+  fi
+	echo "Adding ROMStats..."
+  cp /tmp/cnlbuild/RomStats.apk $currentdir/system/app/RomStats.apk
 	echo "ROMStats Added!"
 	sleep 1
   echo ""
@@ -162,10 +200,17 @@ function build_pa (){
   sleep 1
 	echo ""
 	echo "Downloading Latest Codename Lungo Media..."
-	cd $currentdir/system/media/audio
-	$getmedia
+  if [ -f /tmp/cnlbuild/media.zip ];
+  then
+     echo "Codename Lungo Media is Already Downloaded"
+  else
+     echo "Codename Lungo Media Not Present Downloading..."
+     $getmedia
+  fi
 	echo "Adding Codename Lungo Media..."
-	unzip -q media.zip
+  cp /tmp/cnlbuild/media.zip $currentdir/system/media/audio/media.zip
+	cd $currentdir/system/media/audio/
+  unzip -q media.zip
 	rm -f media.zip
 	echo "Codename Lungo Media Added!"
 	sleep 1
@@ -178,14 +223,14 @@ function build_pa (){
 	find . -name '.DS_Store' -type f -delete
 	find . -name '*.DS_Store' -type f -delete
 	7z a CodenameLungo-$paversion-$now-$DEVICE.zip
-	mv CodenameLungo-$paversion-$now-$DEVICE.zip ~/Downloads
+	mv CodenameLungo-$paversion-$now-$DEVICE.zip ~/Downloads/cnl-upload
 }
 
 show_header (){
 	echo ""
 	echo "Codename Lungo Build Script "
 	echo "---------------------------------------------------------"
-	echo "Version     	: 20140724"
+	echo "Version     	: 20140811"
 	echo "Maintainer  	: T.Veluwenkamp <contact@timveluwenkamp.eu>"
 	echo "Copyright   	: Copyright (C) 2014 T.Veluwenkamp"
 	echo "---------------------------------------------------------"
