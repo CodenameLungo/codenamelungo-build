@@ -150,7 +150,7 @@ function build_pa (){
 	echo "Cleaning Apps..."
 	rm -f BasicDreams.apk Browser.apk Calculator.apk DocumentsUI.apk DownloadProviderUi.apk Email.apk Exchange2.apk Galaxy4.apk HoloSpiralWallpaper.apk HTMLViewer.apk Launcher3.apk Lightbulb.apk LiveWallpapers.apk LiveWallpapersPicker.apk MagicSmokeWallpapers.apk NoiseField.apk OmniTorch.apk OpenWnn.apk PacProcessor.apk PhaseBeam.apk PhotoTable.apk SoundRecorder.apk Stk.apk VideoEditor.apk VisualizationWallpapers.apk
 	cd $currentdir/system/priv-app
-	rm -f InputDevices.apk MusicFX.apk ParanoidOTA.apk
+	rm -f InputDevices.apk MusicFX.apk ParanoidOTA.apk Launcher3.apk
 	echo "App Cleaning DONE!"
 	sleep 1
 	echo ""
