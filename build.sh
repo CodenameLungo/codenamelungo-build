@@ -150,7 +150,7 @@ function build_pa (){
 	echo "Cleaning Apps..."
 	rm -f BasicDreams.apk Browser.apk Calculator.apk DocumentsUI.apk DownloadProviderUi.apk Email.apk Exchange2.apk Galaxy4.apk HoloSpiralWallpaper.apk HTMLViewer.apk Launcher3.apk Lightbulb.apk LiveWallpapers.apk LiveWallpapersPicker.apk MagicSmokeWallpapers.apk NoiseField.apk OmniTorch.apk OpenWnn.apk PacProcessor.apk PhaseBeam.apk PhotoTable.apk SoundRecorder.apk Stk.apk VideoEditor.apk VisualizationWallpapers.apk
 	cd $currentdir/system/priv-app
-	rm -f InputDevices.apk MusicFX.apk ParanoidOTA.apk Launcher3.apk
+	rm -f InputDevices.apk MusicFX.apk ParanoidOTA.apk Launcher3.apk VoiceDialer.apk
 	echo "App Cleaning DONE!"
 	sleep 1
 	echo ""
@@ -230,7 +230,7 @@ show_header (){
 	echo ""
 	echo "Codename Lungo Build Script "
 	echo "---------------------------------------------------------"
-	echo "Version     	: 20140811"
+	echo "Version     	: 20141007"
 	echo "Maintainer  	: T.Veluwenkamp <contact@timveluwenkamp.eu>"
 	echo "Copyright   	: Copyright (C) 2014 T.Veluwenkamp"
 	echo "---------------------------------------------------------"
