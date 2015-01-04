@@ -5,7 +5,6 @@ now=$(date +'%Y%m%d') # Get Date
 cmversion=$(echo "CM11") # CM11
 paversion=$(echo "PA4.4") # PA 
 getapex='curl -s -o /tmp/cnlbuild/ApexLauncher.apk apex.anddoes.com/Download.aspx' # Download Latest ApexLauncher
-getromstats='curl -s -o /tmp/cnlbuild/RomStats.apk build.codenamelungo.net/RomStats.apk' # Download Latest RomStats
 getmedia='curl -s -o /tmp/cnlbuild/media.zip build.codenamelungo.net/media.zip' # Download Latest Media
 
 # Build Cyanogenmod 11
@@ -69,18 +68,6 @@ function build_CM11 (){
 	echo "Adding ApexLauncher..."
 	cp /tmp/cnlbuild/ApexLauncher.apk $currentdir/system/app/ApexLauncher.apk
   echo "ApexLauncher Added!"
-	sleep 1
-	echo ""
-  if [ -f /tmp/cnlbuild/RomStats.apk ];
-  then
-     echo "ROMStats is Already Downloaded"
-  else
-     echo "ROMStats Not Present Downloading..."
-     $getromstats
-  fi
-	echo "Adding ROMStats..."
-  cp /tmp/cnlbuild/RomStats.apk $currentdir/system/app/RomStats.apk
-	echo "ROMStats Added!"
 	sleep 1
   echo ""
   echo "Setting chmod rights"
@@ -178,18 +165,6 @@ function build_pa (){
 	echo "Adding ApexLauncher..."
 	cp /tmp/cnlbuild/ApexLauncher.apk $currentdir/system/app/ApexLauncher.apk
   echo "ApexLauncher Added!"
-	sleep 1
-	echo ""
-  if [ -f /tmp/cnlbuild/RomStats.apk ];
-  then
-     echo "ROMStats is Already Downloaded"
-  else
-     echo "ROMStats Not Present Downloading..."
-     $getromstats
-  fi
-	echo "Adding ROMStats..."
-  cp /tmp/cnlbuild/RomStats.apk $currentdir/system/app/RomStats.apk
-	echo "ROMStats Added!"
 	sleep 1
   echo ""
   echo "Setting chmod rights"
