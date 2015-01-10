@@ -155,14 +155,20 @@ function build_cm102 (){
   echo "Setting chmod rights"
   cd $currentdir/system/app
   chmod +x ApexLauncher.apk
-  chmod +x RomStats.apk
   sleep 1
 	echo ""
 	echo "Downloading Latest Codename Lungo Media..."
-	cd $currentdir/system/media/audio
-	$getmedia
+  if [ -f /tmp/cnlbuild/media.zip ];
+  then
+     echo "Codename Lungo Media is Already Downloaded"
+  else
+     echo "Codename Lungo Media Not Present Downloading..."
+     $getmedia
+  fi
 	echo "Adding Codename Lungo Media..."
-	unzip -q media.zip
+  cp /tmp/cnlbuild/media.zip $currentdir/system/media/audio/media.zip
+	cd $currentdir/system/media/audio/
+  unzip -q media.zip
 	rm -f media.zip
 	echo "Codename Lungo Media Added!"
 	sleep 1
