@@ -20,23 +20,19 @@ pull the repo
 git pull git@bitbucket.org:codenamelungo/build.git cnl-build
 ~~~
 
-make build.sh executable
-~~~
-chmod +x ~/bin/cnl-build/build.sh
-~~~ 
 
-#### 3. make build command ####
-edit .bash_aliases
+#### 3. Add cnl-build to your path ####
+edit .bash_profile
 ~~~
-sudo nano ~/.bash_aliases
+sudo nano ~/.bash_profile
 ~~~
 
-add the following alias
+add the following to the top of the file 
 ~~~
-alias cnlbuild='/home/[user]/bin/cnl-build/./build.sh'
+export PATH=~/bin:~/bin/cnl-build:$PATH
 ~~~
 
-#### 4. how to use? ####
+#### 4. How to use? ####
 1. download the CM or OmniROM nightly in you download folder 
 2. unzip the nightly with the archive manager in seperate folder 
 3. open your Terminal and go to the extracted nightly
