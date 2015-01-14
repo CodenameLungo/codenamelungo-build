@@ -71,7 +71,6 @@ function build_cm11 (){
   echo "Setting chmod rights"
   cd $currentdir/system/app 
   chmod +x ApexLauncher.apk
-  chmod +x RomStats.apk
   echo "Setting chmod rights Done!"
   sleep 1
 	echo ""
@@ -96,12 +95,12 @@ function build_cm11 (){
 	read -p "Build.prop is open press [enter] when you are done"
 	echo ""
 	cd $currentdir
-	find . -name '.DS_Store' -type f -delete
 	find . -name '*.DS_Store' -type f -delete
 	7z a CodenameLungo-CM11-$now-$DEVICE.zip
 	mv CodenameLungo-CM11-$now-$DEVICE.zip ~/Downloads/cnl-upload
 }
 
+# Build Cyanogenmod 10.2
 function build_cm102 (){
 	echo ""
 	echo "What device are you building?"
@@ -115,8 +114,13 @@ function build_cm102 (){
 	echo "Build Date: $now"
 	echo "-----------------------------"
 	echo ""
-	read -p "Everything ok? press [enter] to continue"
+	read -p "Check for errors press [enter] when everything is ok..."
 	echo ""
+  echo "Preparing Build Environment"
+  mkdir -p /tmp/cnlbuild
+  mkdir -p ~/Downloads/cnl-upload
+  echo ""
+  sleep 1
 	echo "Starting Build!"
 	echo ""
 	sleep 1
@@ -151,10 +155,11 @@ function build_cm102 (){
 	cp /tmp/cnlbuild/ApexLauncher.apk $currentdir/system/app/ApexLauncher.apk
   echo "ApexLauncher Added!"
 	sleep 1
-	echo ""
+  echo ""
   echo "Setting chmod rights"
-  cd $currentdir/system/app
+  cd $currentdir/system/app 
   chmod +x ApexLauncher.apk
+  echo "Setting chmod rights Done!"
   sleep 1
 	echo ""
 	echo "Downloading Latest Codename Lungo Media..."
@@ -178,17 +183,15 @@ function build_cm102 (){
 	read -p "Build.prop is open press [enter] when you are done"
 	echo ""
 	cd $currentdir
-	find . -name '.DS_Store' -type f -delete
 	find . -name '*.DS_Store' -type f -delete
 	7z a CodenameLungo-CM10.2-$now-$DEVICE.zip
 	mv CodenameLungo-CM10.2-$now-$DEVICE.zip ~/Downloads/cnl-upload
 }
-
 show_header (){
 	echo ""
 	echo "Codename Lungo Build Script "
 	echo "---------------------------------------------------------"
-	echo "Version     	: 20150110"
+	echo "Version     	: 20150114"
 	echo "Maintainer  	: T.Veluwenkamp <contact@timveluwenkamp.eu>"
 	echo "Copyright   	: Copyright (C) 2015 T.Veluwenkamp"
 	echo "---------------------------------------------------------"

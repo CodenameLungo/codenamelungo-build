@@ -96,7 +96,6 @@ function build_pa46 (){
 	read -p "Build.prop is open press [enter] when you are done"
 	echo ""
 	cd $currentdir
-	find . -name '.DS_Store' -type f -delete
 	find . -name '*.DS_Store' -type f -delete
 	7z a CodenameLungo-PA4.6-$now-$DEVICE.zip
 	mv CodenameLungo-PA4.6-$now-$DEVICE.zip ~/Downloads/cnl-upload
@@ -106,7 +105,7 @@ show_header (){
 	echo ""
 	echo "Codename Lungo Build Script "
 	echo "---------------------------------------------------------"
-	echo "Version     	: 20150110"
+	echo "Version     	: 20150114   s"
 	echo "Maintainer  	: T.Veluwenkamp <contact@timveluwenkamp.eu>"
 	echo "Copyright   	: Copyright (C) 2015 T.Veluwenkamp"
 	echo "---------------------------------------------------------"
