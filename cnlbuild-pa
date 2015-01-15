@@ -5,7 +5,7 @@ now=$(date +'%Y%m%d') # Get Date
 getapex='curl -s -o /tmp/cnlbuild/ApexLauncher.apk apex.anddoes.com/Download.aspx' # Download Latest ApexLauncher
 getmedia='curl -s -o /tmp/cnlbuild/media.zip build.codenamelungo.net/media.zip' # Download Latest Media
 
-# Build PA4.4
+# Build Paranoid Android 4.6
 function build_pa46 (){
 	echo ""
 	echo "What device are you building?"
@@ -15,7 +15,7 @@ function build_pa46 (){
 	echo "Build Information"
 	echo "-----------------------------"
 	echo "Device:	$DEVICE"
-	echo "Android: $paversion"
+	echo "Paranoid Android: 4.6"
 	echo "Build Date: $now"
 	echo "-----------------------------"
 	echo ""
@@ -71,7 +71,6 @@ function build_pa46 (){
   echo "Setting chmod rights"
   cd $currentdir/system/app 
   chmod +x ApexLauncher.apk
-  chmod +x RomStats.apk
   echo "Setting chmod rights Done!"
   sleep 1
 	echo ""
@@ -105,7 +104,7 @@ show_header (){
 	echo ""
 	echo "Codename Lungo Build Script "
 	echo "---------------------------------------------------------"
-	echo "Version     	: 20150114   s"
+	echo "Version     	: 20150115"
 	echo "Maintainer  	: T.Veluwenkamp <contact@timveluwenkamp.eu>"
 	echo "Copyright   	: Copyright (C) 2015 T.Veluwenkamp"
 	echo "---------------------------------------------------------"
@@ -116,12 +115,12 @@ show_menu() {
 	echo "Select Paranoid Android Version"
 	echo "----------------------"
 	echo "1. Paranoid Android 4.6"
-	echo "2. Exit"
+	echo "3. Exit"
 }
 
 function read_input(){
 	local c
-	read -p "Enter Paranoid Android version [ 1 - 2 ] "
+	read -p "Enter Paranoid Android version [ 1 - 2 ] " c
 	case $c in
 		1)	build_pa46; exit 0; ;;
 		2)	echo "Good Bye!"; exit 0; ;;
