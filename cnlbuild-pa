@@ -3,7 +3,7 @@
 currentdir=$(pwd) 		# Get Current Working Dir 
 now=$(date +'%Y%m%d') # Get Date
 getapex='curl -s -o /tmp/cnlbuild/ApexLauncher.apk apex.anddoes.com/Download.aspx' # Download Latest ApexLauncher
-getmedia='curl -s -o /tmp/cnlbuild/media.zip build.codenamelungo.net/media.zip' # Download Latest Media
+getmedia='curl -s -o /tmp/cnlbuild/media.zip build.codenamelungo.co/media.zip' # Download Latest Media
 
 # Build Paranoid Android 4.6
 function build_pa46 (){
